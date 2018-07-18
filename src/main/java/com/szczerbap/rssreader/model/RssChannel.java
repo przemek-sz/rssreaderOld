@@ -3,6 +3,7 @@ package com.szczerbap.rssreader.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "rsschannel")
 public class RssChannel {
 
     @Id

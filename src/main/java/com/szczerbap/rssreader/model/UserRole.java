@@ -8,6 +8,7 @@ import java.util.Set;
 
 
 @Entity
+@Table(name = "userrole")
 public class UserRole {
 
     @Id

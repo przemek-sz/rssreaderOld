@@ -6,6 +6,7 @@ import java.util.Set;
 
 
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id
@@ -19,7 +20,7 @@ public class User {
     private Set<RssChannel> channelSet = new HashSet<>();
     //==============================================================//
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable
+    @JoinTable(name = "user_userrole")
     private Set<UserRole> roles = new HashSet<>();
 
     //=============================================================//

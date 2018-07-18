@@ -27,19 +27,22 @@ public class RootConfig {
     @Bean
     public DataSource createDS() {
         BasicDataSource ds = new BasicDataSource();
-          ds.setUrl("jdbc:mysql://rssreadersql.mysql.database.azure.com:3306/rssreader?useSSL=true&requireSSL=false");
-          ds.setUsername("przemeksz28@rssreadersql");
-          ds.setPassword("DocWho28");
+          //ds.setUrl("jdbc:mysql://rssreaderazuresql.mysql.database.azure.com:3306/rssreader?useSSL=true&requireSSL=false");
+          ds.setUrl("jdbc:mysql://localhost:3306/rssreader?useSSL=true&requireSSL=false");
+          ds.setUsername("root");
+          ds.setPassword("root");
+          //ds.setUsername("przemeksz28@rssreaderazuresql");
+          //ds.setPassword("DocWho28");
           ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
         //myDbConn = DriverManager.getConnection(url, "{your_username}", {your_password});
 
-        /*
-        ds.setUrl("jdbc:mysql://localhost:3306/mojabaza");
-        ds.setUsername("admin");
-        ds.setPassword("admin");
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
-        */
+
+        //ds.setUrl("jdbc:mysql://localhost:3306/mojabaza");
+        //ds.setUsername("admin");
+        //ds.setPassword("admin");
+        //ds.setDriverClassName("com.mysql.jdbc.Driver");
+
 
         //BasicDataSource ds = DriverManager.getConnection("jdbc:mysql://rssreadersql.mysql.database.azure.com:3306/rssreader?useSSL=true&requireSSL=false", "przemeksz28@rssreadersql", "DocWho28");
 
@@ -60,7 +63,7 @@ public class RootConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         Map<String, String> properties = new HashMap<String, String>();
         properties.put("hibernate.hbm2ddl.auto", "update");
-        properties.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
+        //properties.put("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
         emf.setJpaPropertyMap(properties);
         emf.setDataSource(ds);
         emf.setJpaVendorAdapter(adapter);
